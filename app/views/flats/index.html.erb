@@ -1,8 +1,15 @@
-<h1>Flats</h1>
-<ul class="list-group">
+  <h1>All our Flats (<%= @flats.length %>)</h1>
+  <div class="row justify-content-between">
   <% @flats.each do |f| %>
-    <li class="list-group-item"><%= f.name %> | address : <%= f.address %></li>
-    <%= link_to "See details", flat_path(f.id), class: "btn btn-primary"%>
-    <hr>
+    <div class="card my-4" style="width: 18rem;">
+    <img class="card-img-top" src="https://source.unsplash.com/random" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= f.name %></h5>
+        <p class="card-text"><%= f.address %></p>
+        <p class="card-text"><i class="fas fa-user-friends"></i><%= f.number_of_guests %></p>
+        <p class="card-text"><i class="fas fa-euro-sign"></i><%= f.price_per_night %></p>
+        <%= link_to "More infos", flat_path(f.id), class: "btn btn-primary"%>
+      </div>
+    </div>
   <% end %>
-</ul>
+  </div>
