@@ -1,0 +1,8 @@
+<h1>Flats</h1>
+<ul class="list-group">
+  <% @flats.each do |f| %>
+    <li class="list-group-item"><%= f.name %> | address : <%= f.address %></li>
+    <%= link_to "See details", flat_path(f.id), class: "btn btn-primary"%>
+    <hr>
+  <% end %>
+</ul>
